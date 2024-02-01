@@ -8,9 +8,15 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
     
-    //User
+    //Game
     @ExceptionHandler
     public ResponseEntity<Object> handleGameNameConflict(GameNameConflict exception){
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(exception.getMessage());
+    }
+
+    //Customer
+    @ExceptionHandler
+    public ResponseEntity<Object> handleCustomerCpfConflict(CustomerCpfConflict exception){
         return ResponseEntity.status(HttpStatus.CONFLICT).body(exception.getMessage());
     }
 

@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.boardcamp.api.dto.BoardGameDTO;
 import com.boardcamp.api.exceptions.GameNameConflict;
 import com.boardcamp.api.model.boardGame.BoardGame;
+import com.boardcamp.api.model.boardGame.BoardGameDTO;
 import com.boardcamp.api.repository.BoardGameRepo;
 
 @Service

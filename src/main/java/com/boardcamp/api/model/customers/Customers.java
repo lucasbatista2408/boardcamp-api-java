@@ -1,4 +1,4 @@
-package com.boardcamp.api.model.boardGame;
+package com.boardcamp.api.model.customers;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,16 +9,14 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@Table(name = "games")
-public class BoardGame {
-    
+@NoArgsConstructor
+@Table
+public class Customers {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -27,18 +25,11 @@ public class BoardGame {
     private String name;
 
     @Column
-    private String image;
-    
-    @Column
-    private Integer stockTotal;
-    
-    @Column
-    private Integer pricePerDay;
+    private String cpf;
 
-    public BoardGame(BoardGameDTO bg){
-        this.name = bg.getName();
-        this.image = bg.getImage();
-        this.pricePerDay = bg.getPricePerDay();
-        this.stockTotal = bg.getStockTotal();
+    public Customers(CustomerDTO c){
+        this.cpf = c.getCpf();
+        this.name = c.getName();
     }
+    
 }
