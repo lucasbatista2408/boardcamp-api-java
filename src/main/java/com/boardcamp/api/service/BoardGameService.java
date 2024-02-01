@@ -13,7 +13,7 @@ public class BoardGameService {
 
     final BoardGameRepo boardGameRepo;
 
-    private BoardGameService (BoardGameRepo boardGameRepo){
+     BoardGameService (BoardGameRepo boardGameRepo){
         this.boardGameRepo = boardGameRepo;
     }
     
