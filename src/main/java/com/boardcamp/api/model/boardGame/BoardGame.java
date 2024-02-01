@@ -1,5 +1,7 @@
 package com.boardcamp.api.model.boardGame;
 
+import com.boardcamp.api.dto.BoardGameDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,4 +36,11 @@ public class BoardGame {
     
     @Column
     private Integer pricePerDay;
+
+    public BoardGame(BoardGameDTO bg){
+        this.name = bg.getName();
+        this.image = bg.getImage();
+        this.pricePerDay = bg.getPricePerDay();
+        this.stockTotal = bg.getStockTotal();
+    }
 }
