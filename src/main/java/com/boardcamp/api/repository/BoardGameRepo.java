@@ -7,5 +7,5 @@ import com.boardcamp.api.model.boardGame.BoardGame;
 
 @Repository
 public interface BoardGameRepo extends JpaRepository<BoardGame, Long> {
-    
+    boolean existsByName(String name);
 }

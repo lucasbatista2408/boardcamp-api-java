@@ -11,6 +11,8 @@ import com.boardcamp.api.dto.BoardGameDTO;
 import com.boardcamp.api.model.boardGame.BoardGame;
 import com.boardcamp.api.service.BoardGameService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +30,7 @@ public class BoardGameController {
     }
 
     @PostMapping
-    public ResponseEntity<BoardGame> insertGame(@RequestBody BoardGameDTO data) {
+    public ResponseEntity<BoardGame> insertGame(@RequestBody @Valid BoardGameDTO data) {
         
         BoardGame response = boardGameService.insertGame(data);
 

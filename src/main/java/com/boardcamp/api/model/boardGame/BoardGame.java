@@ -18,7 +18,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table
+@Table(name = "games")
 public class BoardGame {
     
     @Id
